@@ -1,0 +1,6 @@
+/.git
+/.vs
+/Speedometer.atsln
+/Speedometer/Debug/*
+/Speedometer/Speedometer.componentinfo.xml
+/Speedometer/Speedometer.cproj
