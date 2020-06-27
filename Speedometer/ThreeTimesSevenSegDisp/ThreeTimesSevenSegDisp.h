@@ -13,10 +13,10 @@
 #define DIGIT2 PC1
 #define DIGIT3 PC2
 
-//-------Funkcje obs³ugi transmisji do hc595-------//
+//------- 7-segment display init -------//
 void initDisplay();
 
-//--------Funkcje w³¹czaj¹ce-wy³¹czajace cyfry--------//
+//-------- Functions to turn on/off single digit --------//
 void digit1Run();
 void digit2Run();
 void digit3Run();

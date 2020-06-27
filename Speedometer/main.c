@@ -52,7 +52,6 @@ ISR(TIMER1_COMPA_vect)    // Timer1 ISR
 }
 ISR(INT0_vect)
 {
-	//PORTB ^= LED;
 	pulseCount++;
 }
 int main()
@@ -74,17 +73,16 @@ int main()
 	
 	//------TIMER1------//
 	TCCR1B = (1<<WGM12);		//CTC clear timer on compare
-	OCR1A = 15625;				//Wartoœæ rejestru do porownania (wyzwolenie przerwania)
+	OCR1A = 15625;				//every second, information to calculate speed
 	TIMSK1 = (1<<OCIE1A);
 	TCCR1B |= (1<<CS12) | (1<<CS10); //Preskaler
 	
-	sei();						//w³¹czenie obslugi przerwan
+	sei();						//interrupts ON
 	
 	while(1)
 	{
 		if(calcSpeed == 1)
 		{
-			pulseCount = pulseCount;
 			hundreds = pulseCount/100;
 			tens = (pulseCount - 100*hundreds)/10;
 			unity = pulseCount%10;
